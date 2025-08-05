@@ -161,9 +161,9 @@ def classificar_perfil(dados):
             resultado = "Generalista_Alta_Confianca"
     elif diferenca >= 2.5 and total_pontos >= 3:
         if pontos_especialista > pontos_generalista:
-            resultado = "Especialista_Media_Confianca"
+            resultado = "Especialista_Média_Confianca"
         else:
-            resultado = "Generalista_Media_Confianca"
+            resultado = "Generalista_Média_Confianca"
     elif diferenca >= 1.5 and total_pontos >= 1.5:
         if pontos_especialista > pontos_generalista:
             resultado = "Especialista_Baixa_Confianca"
@@ -318,16 +318,16 @@ def main():
                 descricao = "Você tem um perfil claramente **generalista**! Suas características indicam versatilidade e atuação em múltiplas áreas."
             elif "Media_Confianca" in resultado:
                 nivel = "Média Confiança"
-                descricao = "Você tende a ter um perfil **generalista**. Há indicações de versatilidade, mas com alguns aspectos de especialização."
+                descricao = "Você tende a ter um perfil generalista. Há indicações de versatilidade, mas com alguns aspectos de especialização."
             else:
                 nivel = "Baixa Confiança"
-                descricao = "Você pode ter um perfil **generalista**, mas há sinais mistos em sua trajetória profissional."
+                descricao = "Você pode ter um perfil generalista, mas há sinais mistos em sua trajetória profissional."
         
         else:
             emoji = "⚖️"
             cor = "orange"
             nivel = "Perfil Ambíguo"
-            descricao = "Seu perfil apresenta características **equilibradas** entre especialista e generalista. Isso pode indicar uma transição de carreira ou um perfil híbrido."
+            descricao = "Seu perfil apresenta características equilibradas entre especialista e generalista. Isso pode indicar uma transição de carreira ou um perfil híbrido."
         
         st.markdown(f"""
         <div style="
@@ -348,33 +348,6 @@ def main():
         """, unsafe_allow_html=True)
         
        
-        # Recomendações
-        st.markdown("### 💡 Recomendações")
-        
-        if "Especialista" in resultado:
-            st.success("""
-            **Para especialistas:**
-            - Continue aprofundando conhecimentos em sua área de expertise
-            - Considere certificações técnicas avançadas
-            - Participe de comunidades especializadas
-            - Mantenha-se atualizado com as últimas tecnologias da sua área
-            """)
-        elif "Generalista" in resultado:
-            st.info("""
-            **Para generalistas:**
-            - Desenvolva habilidades de comunicação e liderança
-            - Busque experiências em diferentes áreas de negócio
-            - Considere posições de gestão ou consultoria
-            - Mantenha uma visão ampla do mercado
-            """)
-        else:
-            st.warning("""
-            **Para perfis ambíguos:**
-            - Reflita sobre qual direção deseja seguir
-            - Considere fazer um planejamento de carreira
-            - Teste diferentes áreas para descobrir suas preferências
-            - Busque mentoria para definir seu caminho
-            """)
 
 if __name__ == "__main__":
     main()
