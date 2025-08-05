@@ -138,5 +138,3 @@ No final:
 **Total: Esp = 3 | Gen = 7 → Generalista Média Confiança**
 
 ---
-
-Pronto! O modelo agora avalia cada pessoa nesses seis blocos, soma os dois lados e devolve uma categoria com nível de confiança — ou “Ambíguo” quando a disputa é acirrada demais.
